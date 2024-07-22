@@ -1,0 +1,577 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@font-face {
+    font-family: "Cairo Bold";
+    src: url("C:/Users/Home/Downloads/cairo/Cairo-Black-BF643384eef038f.ttf");
+  }
+  @font-face {
+    font-family: "Cairo Medio";
+    src: url("C:/Users/Home/Downloads/cairo/Cairo-Medium-BF643384ef5d193.ttf");
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo';
+}
+/**********/
+/* HEADER */
+/* menu */
+header{
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+    background: rgba(0, 0, 0, 0.2);
+}
+header.fixed-nav{
+    background: #fff;
+    position: fixed;
+    margin: 1em 0 0 0;
+    width: 96%;
+    left: 2%;
+    transition: all 1.5s ease-in-out;
+    box-shadow: 0px 0px 10px -5px black;
+    border-radius: 4px;
+}
+header .brand {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Cairo Bold';
+}
+header .navigation {
+    position: relative;
+}
+/* cores menu e efeitos de hover */
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 1s ease;
+    font-family: 'Cairo Medio';
+}
+header.fixed-nav .navigation-items a {
+    color: black;
+}
+header.fixed-nav .brand {
+    color: black;
+}
+header .navigation .navigation-items a:hover{
+    color: #3678c1;
+}
+header .navigation .navigation-items a:before {
+    content: '';
+    position: absolute;
+    background: #3678c1;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease;
+}
+header .navigation .navigation-items a:hover:before {
+    width: 100%;
+}
+/* cores menu e efeitos de hover */
+/* menu */
+/* FIM HEADER */
+/**********/
+
+
+/**********/
+/* SEÇÂO 1 HOME */
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #ffffff;
+    align-items: center;
+}
+
+.home:before {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    background-color: #ff040421;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Conteudo slider */
+.home .content{
+    z-index: 3;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+    
+}
+.home .content.active {
+    display: block;
+}
+.home .content h1 {
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+    font-family: 'Cairo Bold';
+}
+.home .content h1 span {
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'Cairo Bold';
+}
+.home .content p {
+    margin-bottom: 65px;
+    font-family: 'Cairo Medio';
+    font-size: 20px;
+}
+.home .content a{
+    background: white;
+    padding: 15px 35px;
+    color: blue;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 10px;
+}
+/* Fim Conteudo slider */
+
+/* Icones sociais flutuantes */
+.home .media-icons {
+    z-index: 3;
+    position: fixed;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+.home .media-icons a{
+    color:#86d0fd;
+    font-size: 1.6em;
+}
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px; 
+}
+.home .media-icons a:hover{
+    transform: scale(1.3); 
+}
+/* Fim icones sociais flutuantes  */
+
+/* Video de fundo */
+.home video {
+position: absolute;
+height: 100%;
+width: 100%;
+z-index: 0;
+top: 0;
+left: 0;
+object-fit: cover;
+}
+
+.video-slide {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active {
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+/* Fim Video de fundo */
+
+/* Botoes de navegar slider */
+.slider-navigation {
+    z-index: 3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px black;
+    transition: 0.3s ease;
+}
+.slider-navigation .nav-btn.active{
+    background-color: #004a75;
+}
+.slider-navigation .nav-btn:hover {
+    transform: scale(1.3);
+    background-color: #004a75;
+}
+
+.slider-navigation .nav-btn:not(:last-child) {
+    margin-right: 1em;
+}
+/* Botoes de navegar slider */
+/* FIM SEÇAO 1 HOME  */
+/**********/
+
+@media (max-width: 1040px){
+    header {
+        padding: 12px 20px;
+    }
+    section {
+        padding: 100px 20px;
+    }
+    .home .media-icons {
+        right: 15px;
+    }
+    .home .content h1 {
+        font-size: 2.5em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 45px;
+        margin-bottom: 30px;
+    }
+    header .navigation {
+        display: none;
+    }
+    header .navigation.active{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1,1,0,0.5);
+    }
+    .menu-btn {
+        background: url(C:/Users/Pena/Pictures/botao-de-menu.png);            
+        background-size: 30px;
+        background-position: center;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.4s ease;
+    }
+    .menu-btn.active {
+        background: url(C:/Users/Pena/Pictures/close.png);            
+        transition: 0.4s ease;
+        background-size: 40px;
+        width: 40px;
+        height: 40px;
+        background-position: center;
+        z-index: 999;
+    }
+    header .navigation .navigation-items a{
+        color: black;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+    header .navigation .navigation-items a:before{
+        background: black;
+        height: 2px;
+    }
+    header .navigation .navigation-items{
+        background: white;
+        width: 50%;
+        max-width: 80%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px -2px white;
+    }
+}
+/* FIM HEADER */
+/**********/
+
+
+
+
+/**********/
+/* BLOCOS */
+section {
+    min-height: 100vh;
+}
+/* BLOCOS */
+/**********/
+
+
+
+
+
+/**********/
+/* BLOCO EMPREGOS */
+#empregos {
+    background-color: #fff;
+    padding: 3em 3em;
+}
+.empregos-content {
+    height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3em;
+  }
+
+  .btn-empregos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    float: left;
+    height: 100vh;
+  }
+  .tab-btn:not(:last-child) {
+    margin-bottom: 1em;
+  }
+
+/* esconde conteudo e ativa botao clicado */
+  .tab-btn {
+    background-color: #004a75;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(0 67 107 / 90%);
+    border-radius: 5px;
+    padding: 15px 10px;
+    font-size: 16px;
+    font-family: 'Cairo Bold';
+  }
+  .tab-btn:hover {
+    background-color: #0078bd;
+  }
+  .tab-btn.active {
+    background: #0078bd;
+    color: #fff;
+    font-size: 17px;
+  }
+  .content-jobs {
+    display: none;
+  }
+  .content-jobs.active {
+    display: block;
+  }
+  /* Fim esconde conteudo e ativa botao clicado */
+
+  /* Conteudo dos empregos */
+  .jobs-titulo {
+      font-size: 34px;
+      color: #414141;
+      margin-bottom: 0.6em;
+      font-family: 'Cairo Bold';
+  }
+  .info-principal {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2em;
+  }
+  .info-principal h3{
+      color: #575757;
+      font-size: 20px;
+      font-family: 'Cairo Bold';
+  }
+  .info-principal span{
+      color: #575757;
+      font-size: 18px;
+      font-family: 'Cairo Medio';
+  }
+  .job-conteudo p {
+      font-size: 16px;
+      color: #181818;
+      margin-bottom: 0.5em;
+      font-family: 'Cairo Medio';
+  }
+   /* Fim Conteudo dos empregos */
+  /* FIM BLOCO EMPREGOS*/
+  /**********/
+
+
+
+
+
+
+
+/**********  SITES ***********/
+#sites {
+    background-color: #004a75;
+    padding: 3em 4em 3em 3em;
+}
+#sites .title h2 {
+    font-size: 34px;
+    color: white;
+    margin-bottom: 0.6em;
+    font-family: 'Cairo Bold';
+}
+#sites .btn-sites {
+    margin: 1em 0 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sites-filter-btn {
+    text-transform: capitalize;
+    margin: 0 1em;
+    background-color: #0078bd;
+    color: rgb(255, 255, 255);
+    border: 1px solid #ffffff7c;
+    border-radius: 5px;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-family: 'Cairo Bold';
+}
+.sites-filter-btn:hover {
+  background: #fff;
+  color: #0078bd;
+}
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 27vw;
+}
+.section-center{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.photo {
+  object-fit: cover;
+  height: 200px;
+  border-radius: 4px;
+}
+.sites-item-info header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px dotted var(--clr-grey-5);
+}
+.sites-item-info {
+    height: 200px;
+}
+.sites-item-info h4 {
+    margin-bottom: 0.5rem;
+    color: white;
+    font-size: 20px;
+    font-family: 'Cairo Bold';
+}
+.site-item-texto {
+    height: 150px;
+    position: relative;
+}
+.price {
+  color: var(--clr-gold);
+}
+.sites-item-text {
+    margin-bottom: 0;
+    font-family: 'Cairo Medio';
+    color: white;
+}
+.site-item-btn {
+    padding: 10px 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px -4px black;
+    margin-top: 1em;
+    border: 0px;
+    position: absolute;
+    bottom: 0px;
+}
+.site-item-btn a {
+    text-decoration: none;
+}
+/********** FIM SITES ***********/
+
+
+
+
+
+
+/********************************/
+/********** HABILIDADES ***********/
+.habilidade-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.face {
+    width: 200px;
+    height: 200px;
+    perspective: 700px;
+    border-radius: 4px;
+    margin: 2em;
+}
+.face h2 {
+    color: white;
+    font-size: 34px;
+    font-family: 'FontAwesome';
+    padding: 0 0 0.4em 0;
+}
+.face p {
+    color: white;
+    font-size: 16px;
+    font-family: 'Cairo Medio';
+    line-height: 20px;
+}
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 1000ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    border-radius: 4px;
+    flex-direction: column;
+}
+.front {
+    background-color: #1f4a78;
+    z-index: 1;
+}
+.back {
+    background-color: #3678c1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+}
+
+.face:hover .front {
+    transform: rotateY(180deg);
+    z-index: 0;
+}
+.face:hover .back {
+    transform: rotateY(0);
+    z-index: 1;
+}
+
+.front span {
+    font-size: 38px;
+    color: white;
+    font-family: 'Font Awesome 5 Brands';
+} 
+/********** FIM HABILIDADES ***********/
+/********************************/
