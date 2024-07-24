@@ -103,26 +103,7 @@ header .navigation .navigation-items a:hover:before {
     align-items: center;
 }
 
-.home:before {
-    z-index: 2;
-    content: '';
-    position: absolute;
-    background-color: #ff040421;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
 /* Conteudo slider */
-.home .content{
-    z-index: 3;
-    color: #fff;
-    width: 70%;
-    margin-top: 50px;
-    display: none;
-    
-}
 .home .content.active {
     display: block;
 }
@@ -330,6 +311,8 @@ section {
 #empregos {
     background-color: #fff;
     padding: 3em 3em;
+    display: flex;
+    justify-content: center;
 }
 .empregos-content {
     height: 100vh;
