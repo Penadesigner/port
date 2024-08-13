@@ -104,8 +104,12 @@ header .navigation .navigation-items a:hover:before {
 }
 
 /* Conteudo slider */
+.home .content {
+    display: none;
+}
 .home .content.active {
     display: block;
+    z-index: 2;
 }
 .home .content h1 {
     font-size: 4em;
