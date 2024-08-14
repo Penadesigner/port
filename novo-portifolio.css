@@ -448,9 +448,10 @@ section {
     gap: 2em;
 }
 .photo {
-  object-fit: cover;
-  height: 200px;
-  border-radius: 4px;
+    object-fit: contain;
+    height: 200px;
+    border-radius: 4px;
+    max-width: 250px;
 }
 .sites-item-info header {
   display: flex;
@@ -461,10 +462,11 @@ section {
     height: 200px;
 }
 .sites-item-info h4 {
-    margin-bottom: 0.5rem;
+    margin: 0.8em 0 1rem 0;
     color: white;
     font-size: 20px;
     font-family: 'Cairo Bold';
+    text-transform: uppercase;
 }
 .site-item-texto {
     height: 150px;
@@ -499,51 +501,59 @@ section {
 
 /********************************/
 /********** HABILIDADES ***********/
+#habilidades {
+    padding: 3em 4em 3em 3em;
+}
+#habilidades .habilidades-col {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
 .habilidade-cards {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+}
+.habilidades-conteudo {
+    background: #1f4a78;
+    color: white;
+    height: 100px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-content: center;
+    padding: 3em 3em 3em 5em;
+    border-radius: 0 10px 10px 0px;
+    margin-left: -2em;
 }
 .face {
     width: 200px;
     height: 200px;
-    perspective: 700px;
-    border-radius: 4px;
-    margin: 2em;
+    border-radius: 50%;
+    border: 32px solid white;
+    z-index: 2;
 }
-.face h2 {
-    color: white;
-    font-size: 34px;
-    font-family: 'FontAwesome';
-    padding: 0 0 0.4em 0;
-}
-.face p {
-    color: white;
-    font-size: 16px;
-    font-family: 'Cairo Medio';
-    line-height: 20px;
-}
+
 .front, .back {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
     transition: 1000ms;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2em;
-    border-radius: 4px;
     flex-direction: column;
+    border-radius: 100px;
+    border: 7px solid white;
 }
 .front {
     background-color: #1f4a78;
     z-index: 1;
 }
 .back {
-    background-color: #3678c1;
+    background-color: #1f4a78;
     transform: rotateY(-180deg);
     backface-visibility: hidden;
+    color: white;
 }
 
 .face:hover .front {
@@ -555,8 +565,15 @@ section {
     z-index: 1;
 }
 
-.front span {
-    font-size: 38px;
+.face h2 {
+    color: white;
+    font-size: 24px;
+    font-family: 'FontAwesome';
+    padding: 0 0 0.4em 0;
+}
+
+.back h3 {
+    font-size: 28px;
     color: white;
     font-family: 'Font Awesome 5 Brands';
 } 
