@@ -1,11 +1,46 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 @font-face {
-    font-family: "Cairo Bold";
-    src: url("C:/Users/Home/Downloads/cairo/Cairo-Black-BF643384eef038f.ttf");
+    font-family: "Cairo Black";
+    src: url("fonts/Cairo-Black.ttf");
   }
   @font-face {
-    font-family: "Cairo Medio";
-    src: url("C:/Users/Home/Downloads/cairo/Cairo-Medium-BF643384ef5d193.ttf");
+    font-family: "Cairo Bold";
+    src: url("fonts/Cairo-Bold.ttf");
+  }
+  @font-face {
+    font-family: "Cairo ExtraBold";
+    src: url("fonts/Cairo-ExtraBold.ttf");
+  }
+  @font-face {
+    font-family: "Cairo ExtraLight";
+    src: url("fonts/Cairo-ExtraLight.ttf");
+  }
+  @font-face {
+    font-family: "Cairo Medium";
+    src: url("fonts/Cairo-Medium.ttf");
+  }
+  @font-face {
+    font-family: "Cairo Regular";
+    src: url("fonts/Cairo-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Cairo SemiBold";
+    src: url("fonts/Cairo-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: "CovesBold";
+    src: url("fonts/CovesBold.otf");
+  }
+  @font-face {
+    font-family: "CovesLight";
+    src: url("fonts/CovesLight.otf");
+  }
+  @font-face {
+    font-family: "Ailerons";
+    src: url("fonts/Ailerons.otf");
+  }
+  @font-face {
+    font-family: "Cornerstone";
+    src: url("fonts/Cornerstone.ttf");
   }
   
 * {
@@ -26,9 +61,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 200px;
+    padding: 0.8em 5em;
     transition: 0.5s ease;
-    background: rgba(0, 0, 0, 0.2);
+    background: #004a75f2;
 }
 header.fixed-nav{
     background: #fff;
@@ -61,6 +96,7 @@ header .navigation .navigation-items a{
     margin-left: 30px;
     transition: 1s ease;
     font-family: 'Cairo Medio';
+    text-transform: uppercase;
 }
 header.fixed-nav .navigation-items a {
     color: black;
@@ -99,8 +135,8 @@ header .navigation .navigation-items a:hover:before {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: #ffffff;
-    align-items: center;
+    background: #004a75;
+    padding-top: 5em;
 }
 
 /* Conteudo slider */
@@ -110,34 +146,25 @@ header .navigation .navigation-items a:hover:before {
 .home .content.active {
     display: block;
     z-index: 2;
+    background: #004a75c9;
+    padding: 2em 4em 4em 4em;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 5em;
 }
 .home .content h1 {
-    font-size: 4em;
-    font-weight: 900;
+    font-size: 48px;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: -7px;
     line-height: 75px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-family: 'Cairo Bold';
-}
-.home .content h1 span {
-    font-size: 1.1em;
-    font-weight: 600;
-    font-family: 'Cairo Bold';
+    color: white;
 }
 .home .content p {
-    margin-bottom: 65px;
     font-family: 'Cairo Medio';
     font-size: 20px;
-}
-.home .content a{
-    background: white;
-    padding: 15px 35px;
-    color: blue;
-    font-size: 1.1em;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 10px;
+    color: white;
 }
 /* Fim Conteudo slider */
 
@@ -316,51 +343,111 @@ section {
     background-color: #fff;
     padding: 3em 3em;
     display: flex;
+    flex-direction: column;
+}
+
+#empregos .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+#empregos .title h2 {
+    font-size: 34px;
+    color: black;
+    font-family: 'Cairo Bold';
+}
+
+.traco {
+    width: 50px; 
+    height: 4px; 
+    background-color: black;
+    margin-right: 1em;
+}
+.traco-after {
+    width: 50px; 
+    height: 4px; 
+    background-color: black;
+    margin-left: 1em;
+}
+
+.traco-branco {
+    width: 50px; 
+    height: 4px; 
+    background-color: white;
+    margin-right: 1em;
+}
+.traco-after-branco {
+    width: 50px; 
+    height: 4px; 
+    background-color: white;
+    margin-left: 1em;
+}
+
+.empregos {
+    width: 100%;
+}
+
+.empregos-content {
+    margin-top: 3em;
+}
+
+.btn-empregos {
+    width: 100%;
+    display: flex;
     justify-content: center;
 }
-.empregos-content {
-    height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 3em;
-  }
 
-  .btn-empregos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 20%;
-    float: left;
-    height: 100vh;
-  }
-  .tab-btn:not(:last-child) {
-    margin-bottom: 1em;
-  }
+.tab-btn:not(:last-child) {
+    margin-right: 1.4em;
+}
 
 /* esconde conteudo e ativa botao clicado */
+
   .tab-btn {
     background-color: #004a75;
     color: rgb(255, 255, 255);
     border: 1px solid rgb(0 67 107 / 90%);
-    border-radius: 5px;
-    padding: 15px 10px;
+    border-radius: 10px;
+    padding: 10px 5px;
     font-size: 16px;
     font-family: 'Cairo Bold';
+    transition: all 1s;
+    width: 60px;
+    height: 60px;
   }
-  .tab-btn:hover {
-    background-color: #0078bd;
+
+  .tab-btn p{
+    display: none;
+    font-family: 'Cairo Bold';
   }
+
+  .tab-btn.active p{
+    display: block;
+  }
+
+  .tab-btn span{
+    position: static;
+  }
+
+  .tab-btn.active span{
+    display: none;
+  }
+
   .tab-btn.active {
     background: #0078bd;
     color: #fff;
     font-size: 17px;
+    width: 25%;
   }
+
   .content-jobs {
     display: none;
   }
   .content-jobs.active {
     display: block;
+    padding: 0 5em;
   }
   /* Fim esconde conteudo e ativa botao clicado */
 
@@ -387,10 +474,10 @@ section {
       font-family: 'Cairo Medio';
   }
   .job-conteudo p {
-      font-size: 16px;
-      color: #181818;
-      margin-bottom: 0.5em;
-      font-family: 'Cairo Medio';
+    font-size: 18px;
+    color: #181818;
+    margin-bottom: 0.8em;
+    font-family: "Cairo Regular";
   }
    /* Fim Conteudo dos empregos */
   /* FIM BLOCO EMPREGOS*/
@@ -410,8 +497,13 @@ section {
 #sites .title h2 {
     font-size: 34px;
     color: white;
-    margin-bottom: 0.6em;
     font-family: 'Cairo Bold';
+}
+#sites .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
 }
 #sites .btn-sites {
     margin: 1em 0 2em 0;
@@ -504,6 +596,17 @@ section {
 #habilidades {
     padding: 3em 4em 3em 3em;
 }
+#habilidades .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+#habilidades .title h2 {
+    font-size: 34px;
+    color: black;
+    font-family: 'Cairo Bold';
+}
 #habilidades .habilidades-col {
     display: flex;
     align-content: center;
@@ -578,4 +681,27 @@ section {
     font-family: 'Font Awesome 5 Brands';
 } 
 /********** FIM HABILIDADES ***********/
+/********************************/
+
+
+#whats {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#whats img{
+    height: 50px;
+}
+
+
+
+/********************************/
+/********** FOOTER ***********/
+
+
+
+
+
+/********** FIM FOOTER ***********/
 /********************************/
