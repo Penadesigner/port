@@ -1,147 +1,8 @@
-// Seleciona todos os botões de navegação com a classe 'nav-btn','video-slide','content'
-const btns = document.querySelectorAll('.nav-btn');
-const slides = document.querySelectorAll('.video-slide');
-const contents = document.querySelectorAll('.content');
-// Inicializa o índice do slide atual como 0
-let index = 0;
-// Inicializa o ID do intervalo para controle da mudança automática de slides
-let intervalId = null;
-
-/* ****************************************************** */
-/* ************** SLIDER VIDEO AUTO E MANUAL *************** */
-// Função para mudar o slide manualmente
-const changeSlide = (newIndex) => {
-    // Limpa o intervalo atual se existir
-    clearInterval(intervalId);
-    // Remove as classes 'active' dos elementos atuais (botão, slide, conteúdo)
-    btns[index].classList.remove('active');
-    slides[index].classList.remove('active');
-    contents[index].classList.remove('active');
-    // Atualiza o índice para o novo slide (newIndex vem do clique dado nos botoes do slider)
-    index = newIndex;
-    // Adiciona as classes 'active' ao novo slider (botão, slide, conteúdo)
-    btns[index].classList.add('active');
-    slides[index].classList.add('active');
-    contents[index].classList.add('active');
-    // Define um novo intervalo após a interação manual para continuar a mudança automática de slides
-    intervalId = setInterval(changeSlideAutomatically, 5000);
-};
-
-
-// Função para mudar o slide automaticamente
-const changeSlideAutomatically = () => {
-    // Calcula o novo índice para o próximo slide
-    const newIndex = (index + 1) % slides.length;
-    // Chama a função para mudar o slide com o novo índice
-    changeSlide(newIndex);
-};
-// Inicia o intervalo automático para mudar os slides a cada 3 segundos
-intervalId = setInterval(changeSlideAutomatically, 5000);
-
-
-// Adiciona evento de clique aos botões de navegação
-btns.forEach((btn, btnIndex) => {
-    // Adiciona um ouvinte de evento de clique para cada botão
-    btn.addEventListener('click', () => {
-        // Verifica se o botão clicado não é o atual
-        if (btnIndex !== index) {
-            // Chama a função changeSlide passando o índice do botão clicado
-            changeSlide(btnIndex);
-        }
-    });
-});
-/* ************** FIM SLIDER VIDEO AUTO E MANUAL *************** */
-/* ****************************************************** */
-
-
-/******************************************************** */
-/************** MENU FIXO *************** */
-const navbar = document.getElementById("nav");
-
-window.addEventListener("scroll", function () {
-  const scrollHeight = window.pageYOffset;
-  // nao usei a opção de capturar o tamanho do menu const navHeight = navbar.getBoundingClientRect().height;
-  if (scrollHeight > 500) {
-    navbar.classList.add("fixed-nav");
-  } else {
-    navbar.classList.remove("fixed-nav");
-  }
-});
-/************** FIM MENU FIXO *************** */
-/******************************************************** */
-
-/******************************************************** */
-/************** SCROLL SMOTH  *************** */
-const linksContainer = document.querySelector(".navigation-items");
-const scrollLinks = document.querySelectorAll(".scroll-link");
-
-// Adiciona um event click para cada link do menu
-scrollLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    // Previne o comportamento padrão do clique no link (navegar ao destino)
-    e.preventDefault();
-    // Obtém o ID do elemento alvo a partir do atributo "href" do link clicado (slice tira o #)
-    const id = e.currentTarget.getAttribute("href").slice(1);
-    const element = document.getElementById(id);
-    
-    // Obtém a altura da barra de navegação (altura do header sempre igual)
-    const navHeight = navbar.getBoundingClientRect().height;
-
-    // Verifica se a navegação está fixa (FALSE OU TRUE)
-    const fixedNav = navbar.classList.contains("fixed-nav");
-
-    // Calcula a posição do elemento alvo (altura dele referente a pagina)
-    let position = element.offsetTop - 70;
-
-    // Ajusta a posição se a navegação não estiver fixa
-    if (!fixedNav) {
-      position = position - navHeight;
-    }
-
-    // Rola suavemente a página para a posição calculada
-    window.scrollTo({
-      left: 0,
-      top: position,
-      behavior: 'smooth',
-    });
-  });
-});
-/************** FIM SCROLL SMOTH *************** */
-/******************************************************** */
 
 
 
-/******************************************************** */
-/************** EXIBIR EMPREGO *************** */
-const empregosDiv = document.querySelector('.empregos')
-    const botoes = document.querySelectorAll('.tab-btn')
-    const conteudo = document.querySelectorAll('.content-jobs')
 
-    empregosDiv.addEventListener("click",(e)=>{
-        //captura qual elemento dentro do Article foi clicado
-        const id = e.target.dataset.id;
-        // se clicado em um algo que contenha um data-id, faz:
-        if(id){
-            //remover classe de todos botoes
-            botoes.forEach(btn => {
-                btn.classList.remove('active')
-                // adiciona classe ao botao clicado
-                e.target.classList.add('active')
-            });
-            //remover conteudos na tela
-            conteudo.forEach(artigo => {
-                artigo.classList.remove('active')
-            })
-            // busca o objeto que tenha o ID conforme o que fo recebido
-            const elemento = document.getElementById(id).classList.add('active')
-        }
-    })
-    /**************   FIM EXIBIR EMPREGO    *************** */
-    /******************************************************** */
-
-
-
-    /******************************************************** */
+  /******************************************************** */
   /**************   SITES FEITOS   *************** */
 
     const menu = [
@@ -303,9 +164,10 @@ const empregosDiv = document.querySelector('.empregos')
       let displayMenu = menuItems.map(function (item) {
         console.log('item' + item);
         return `<article class="menu-item">
-              <img src=${item.img} alt=${item.title} class="photo" />
+              <a href="${item.link}"><img src=${item.img} alt=${item.title} class="photo" /></a>
               <div class="sites-item-info">
                 <div class="site-item-titulo">
+                  <span>${item.category}</span>
                   <h4>${item.title}</h4>
                 </div>
                 <div class="site-item-texto">
