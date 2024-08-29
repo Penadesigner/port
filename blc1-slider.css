@@ -1,0 +1,128 @@
+/**********/
+/* SEÇÂO 1 HOME */
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #004a75;
+    padding-top: 5em;
+}
+
+/* Conteudo slider */
+.home .content {
+    display: none;
+}
+.home .content.active {
+    display: block;
+    z-index: 2;
+    background: #23272d;
+    padding: 2em 4em 4em 4em;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 5em;
+}
+.home .content h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    line-height: 75px;
+    margin-bottom: 20px;
+    font-family: 'Cairo Bold';
+    color: white;
+}
+.home .content p {
+    font-family: 'Cairo Medio';
+    font-size: 20px;
+    color: white;
+}
+/* Fim Conteudo slider */
+
+/* Icones sociais flutuantes */
+.home .media-icons {
+    z-index: 3;
+    position: fixed;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+.home .media-icons a{
+    color: white;
+    font-size: 1.4em;
+    padding: 10px;
+    background-color: #23272d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+}
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px; 
+}
+.home .media-icons a:hover{
+    transform: scale(1.3); 
+}
+/* Fim icones sociais flutuantes  */
+
+/* Video de fundo */
+.home video {
+position: absolute;
+height: 100%;
+width: 100%;
+z-index: 0;
+top: 0;
+left: 0;
+object-fit: cover;
+}
+
+.video-slide {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.video-slide.active {
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+/* Fim Video de fundo */
+
+/* Botoes de navegar slider */
+.slider-navigation {
+    z-index: 3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px black;
+    transition: 0.3s ease;
+}
+.slider-navigation .nav-btn.active{
+    background-color: #004a75;
+}
+.slider-navigation .nav-btn:hover {
+    transform: scale(1.3);
+    background-color: #004a75;
+}
+
+.slider-navigation .nav-btn:not(:last-child) {
+    margin-right: 1em;
+}
+/* Botoes de navegar slider */
+/* FIM HEADER */
+/**********/

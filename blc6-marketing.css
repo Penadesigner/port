@@ -1,0 +1,38 @@
+/********************************/
+/********** MKT ***********/
+#conhecimentos-mkt {
+    padding: 3em 4em 3em 3em;
+    background-color: #23272d;
+}
+#conhecimentos-mkt .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+#conhecimentos-mkt .title h2 {
+    font-size: 34px;
+    color: white;
+    font-family: 'Cairo Bold';
+}
+
+.conhecimentos-mkt-col {
+    display: flex;
+    flex-wrap: wrap;
+}
+.conhecimentos-bloco {
+    width: 30%;
+    margin: 1.5% 1.5%;
+    padding: 10px 10px 40px 10px;
+    box-shadow: 0px 1px 20px -13px #ffffffa6;
+    background: #ffffff26;
+}
+
+.conhecimento-img img{
+    max-width: 100px;
+}
+.conhecimento-texto p{
+    font-family: 'Cairo Medium';
+    padding: 0px 30px;
+    color: white;
+}

@@ -1,0 +1,144 @@
+/**********/
+/* BLOCO EMPREGOS */
+#empregos {
+    background-color: #23272d;
+    padding: 3em 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+#empregos .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+#empregos .title h2 {
+    font-size: 34px;
+    color: white;
+    font-family: 'Cairo Bold';
+}
+
+.traco-branco {
+    width: 50px; 
+    height: 4px; 
+    background-color: white;
+    margin-right: 1em;
+}
+.traco-after-branco {
+    width: 50px; 
+    height: 4px; 
+    background-color: white;
+    margin-left: 1em;
+}
+
+.empregos {
+    width: 100%;
+}
+
+.empregos-content {
+    margin-top: 3em;
+}
+
+.btn-empregos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5em;
+}
+
+.tab-btn:not(:last-child) {
+    margin-right: 2em;
+}
+
+/* esconde conteudo e ativa botao clicado */
+
+  .tab-btn {
+    background-color: #23272d;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255 255 255 / 90%);
+    border-radius: 10px;
+    padding: 10px 5px;
+    font-size: 16px;
+    font-family: 'Cairo Bold';
+    transition: all 1s;
+    width: 85px;
+    height: 65px;
+  }
+
+  .tab-btn p{
+    display: none;
+    font-family: 'Cairo Bold';
+  }
+
+  .tab-btn.active p{
+    display: block;
+  }
+
+  .tab-btn span{
+    position: static;
+    font-family: "";
+  }
+
+  .tab-btn.active span{
+    display: none;
+  }
+
+  .tab-btn.active {
+    background: white;
+    color: #23272d;
+    font-size: 17px;
+    width: 25%;
+  }
+
+  .content-jobs {
+    display: none;
+  }
+  .content-jobs.active {
+    display: flex;
+    padding: 0 3em;
+  }
+  /* Fim esconde conteudo e ativa botao clicado */
+
+  /* Conteudo dos empregos */
+  .jobs-titulo {
+      font-size: 34px;
+      color: white;
+      margin-bottom: 0.6em;
+      font-family: 'Cairo Bold';
+  }
+  .info-principal {
+    display: flex;
+    flex-direction: column;
+  }
+  .info-principal h3{
+      color: white;
+      font-size: 20px;
+      font-family: 'Cairo Bold';
+      margin-bottom: 2em;
+  }
+  .info-principal span{
+      color: white;
+      font-size: 18px;
+      font-family: 'Cairo Bold';
+  }
+  .job-conteudo p {
+    font-size: 18px;
+    color: #181818;
+    margin-bottom: 0.6em;
+    font-family: "Cairo Medium";
+  }
+
+  .job-conteudo li {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 0.6em;
+    font-family: "Cairo Medium";
+  }
+  .job-conteudo ul {
+    margin-left: 3em;
+  }
+   /* Fim Conteudo dos empregos */
+  /* FIM BLOCO EMPREGOS*/
+  /**********/

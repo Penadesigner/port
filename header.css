@@ -1,0 +1,246 @@
+@font-face {
+    font-family: "Cairo Black";
+    src: url("fonts/Cairo-Black.ttf");
+  }
+  @font-face {
+    font-family: "Cairo Bold";
+    src: url("fonts/Cairo-Bold.ttf");
+  }
+  @font-face {
+    font-family: "Cairo ExtraBold";
+    src: url("fonts/Cairo-ExtraBold.ttf");
+  }
+  @font-face {
+    font-family: "Cairo ExtraLight";
+    src: url("fonts/Cairo-ExtraLight.ttf");
+  }
+  @font-face {
+    font-family: "Cairo Medium";
+    src: url("fonts/Cairo-Medium.ttf");
+  }
+  @font-face {
+    font-family: "Cairo Regular";
+    src: url("fonts/Cairo-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Cairo SemiBold";
+    src: url("fonts/Cairo-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: "CovesBold";
+    src: url("fonts/CovesBold.otf");
+  }
+  @font-face {
+    font-family: "CovesLight";
+    src: url("fonts/CovesLight.otf");
+  }
+  @font-face {
+    font-family: "Ailerons";
+    src: url("fonts/Ailerons.otf");
+  }
+  @font-face {
+    font-family: "Cornerstone";
+    src: url("fonts/Cornerstone.ttf");
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo';
+}
+section {
+    min-height: 100vh;
+}
+.metade1 {
+    width: 40%;
+    border-top: 6px solid white;
+    padding-top: 30px;
+    margin-top: 10px;
+}
+.metade2 {
+    width: 60%;
+    margin-left: 5em;
+}
+/* PADROES */
+/**********/
+
+/* HEADER */
+/* menu */
+header{
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0em 5em;
+    transition: 0.5s ease;
+    background: #23272d;
+}
+header.fixed-nav{
+    background: #fff;
+    position: fixed;
+    width: 4%;
+    margin-top: 1em;
+    left: 94%;
+    transition: all 1s ease-in-out;
+    box-shadow: 0px 0px 10px -5px black;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+
+
+header .brand {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Cairo Bold';
+}
+header.fixed-nav .brand {
+    display: none;
+}
+
+
+
+header .navigation {
+    position: relative;
+}
+header .navigation.active{
+    position: fixed !important;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1,1,0,0.5);
+    z-index: 999;
+}
+
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 1s ease;
+    font-family: 'Cairo Medio';
+    text-transform: uppercase;
+}
+header .navigation .navigation-items a:hover{
+    color: #3678c1;
+}
+header .navigation .navigation-items a:before {
+    content: '';
+    position: absolute;
+    background: #3678c1;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease;
+}
+header .navigation .navigation-items a:hover:before {
+    width: 100%;
+}
+header.fixed-nav .navigation-items {
+    display: none;
+}
+
+
+
+header.fixed-nav .menu-btn {
+    background: rgb(50, 205, 71);            
+    background-size: 30px;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+header.fixed-nav .menu-btn.active {
+    background: rgb(255, 0, 221);            
+    transition: 0.4s ease;
+    z-index: 999;
+}
+
+
+
+@media (max-width: 1040px){
+    header {
+        padding: 12px 20px;
+    }
+    section {
+        padding: 100px 20px;
+    }
+    .home .media-icons {
+        right: 15px;
+    }
+    .home .content h1 {
+        font-size: 2.5em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 45px;
+        margin-bottom: 30px;
+    }
+    header .navigation {
+        display: none;
+    }
+    header .navigation.active{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1,1,0,0.5);
+    }
+    .menu-btn {
+        background: rgb(50, 205, 71);            
+        background-size: 30px;
+        background-position: center;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.4s ease;
+    }
+    .menu-btn.active {
+        background: rgb(255, 0, 221);            
+        transition: 0.4s ease;
+        z-index: 999;
+    }
+    header .navigation .navigation-items a{
+        color: black;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+    header .navigation .navigation-items a:before{
+        background: black;
+        height: 2px;
+    }
+    header .navigation .navigation-items{
+        background: white;
+        width: 50%;
+        max-width: 80%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px -2px white;
+    }
+}
+/* FIM HEADER */
+/**********/

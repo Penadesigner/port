@@ -1,0 +1,22 @@
+/********************************/
+/********** FOOTER ***********/
+
+
+#whats {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 80px;
+    width: 80px;
+    background: transparent;
+    border: none;
+}
+
+#whats img{
+    width: 80px;
+    height: 80px;
+}
+
+
+/********** FIM FOOTER ***********/
+/********************************/
