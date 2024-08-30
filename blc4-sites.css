@@ -70,7 +70,7 @@
 }
 .section-center{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
     gap: 2em;
@@ -87,4 +87,111 @@
   border-bottom: 0.5px dotted var(--clr-grey-5);
 }
 
+.site-lg {
+    width: 100px;
+}
+.titutlo-site {
+    color: white;
+}
+.info-area .info-content p {
+    color: white;
+}
 /********** FIM SITES ***********/
+
+
+section {
+    display: block;
+}
+.section-gap {
+    padding: 120px 0;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+.row {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.info-area .info-left {
+    z-index: 2;
+}
+.no-padding {
+    padding: 0;
+}
+.text-center {
+    text-align: center;
+}
+.text-center {
+    text-align: center !important;
+}
+@media (min-width: 992px) {
+    .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (min-width: 768px) {
+    .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+.col-md-12, .col-lg-6 {
+	position: relative;
+    width: 100%;
+    min-height: 1px;
+}
+.info-area .info-thumb {
+    overflow: hidden;
+    display: inline-block;
+}
+
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+
+.info-area .info-content {
+    box-shadow: 0px 0px 30px -5px rgba(107, 107, 107, 0.284);
+    position: relative;
+    background: transparent;
+    padding: 60px 40px 60px 50px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
