@@ -160,15 +160,15 @@
     let displayMenu = menuItems.map(function (item) {
       console.log('item' + item);
       return `        
-      <section class="section-gap info-area" id="about">
+      <div class="info-area" id="about">
       <div class="container">				
-        <div class="single-info row mt-40 align-items-center">
-          <div class="col-lg-6 col-md-12 text-center no-padding info-left">
+        <div class="row align-items-center">
+          <div class="col-md-4 info-left">
             <div class="info-thumb">
-              <img src=${item.capa} alt=${item.title} class="img-fluid info-img" alt="">
+              <img src='img/palm-app.png' alt=${item.title} class="img-fluid info-img" alt="">
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 no-padding info-rigth">
+          <div class="col-md-8 no-padding info-rigth">
             <div class="info-content">
               <h2 class="pb-30 titutlo-site">Dr. Travor James</h2>
               <p>
@@ -184,7 +184,7 @@
           </div>
         </div>
       </div>
-    </section>`
+    </div>`
           
           ;
     });

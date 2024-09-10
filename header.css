@@ -48,6 +48,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Cairo';
+    overflow-x: hidden;
 }
 section {
     min-height: 100vh;
@@ -133,7 +134,7 @@ header .navigation .navigation-items a{
     text-decoration: none;
     margin-left: 30px;
     transition: 1s ease;
-    font-family: 'Cairo Medio';
+    font-family: 'Cairo Bold';
     text-transform: uppercase;
 }
 header .navigation .navigation-items a:hover{

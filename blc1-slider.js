@@ -36,7 +36,7 @@ const changeSlideAutomatically = () => {
     changeSlide(newIndex);
 };
 // Inicia o intervalo automático para mudar os slides a cada 3 segundos
-intervalId = setInterval(changeSlideAutomatically, 5000);
+intervalId = setInterval(changeSlideAutomatically, 10000);
 
 
 // Adiciona evento de clique aos botões de navegação
