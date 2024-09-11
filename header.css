@@ -67,7 +67,7 @@ section {
 /**********/
 
 /* HEADER */
-/* menu */
+/* MENU NAVBAR */
 header{
     z-index: 9999;
     position: absolute;
@@ -92,9 +92,25 @@ header.fixed-nav{
     border-radius: 4px;
     padding: 10px;
 }
+header #navbar {
+    position: relative;
+}
+header #navbar.active{
+    position: fixed !important;
+    width: 92%;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1,1,0,0.5);
+    z-index: 999;
+}
+/* FIM MENU NAVBAR */
 
-
-
+/*  LOGO */
 header .brand {
     color: #fff;
     font-size: 2em;
@@ -106,26 +122,12 @@ header .brand {
 header.fixed-nav .brand {
     display: none;
 }
+/*  FIM LOGO */
 
-
-
-header .navigation {
-    position: relative;
+/*  ITENS DO MENU */
+header.fixed-nav .navigation-items {
+    display: none;
 }
-header .navigation.active{
-    position: fixed !important;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(1,1,0,0.5);
-    z-index: 999;
-}
-
-
 header .navigation .navigation-items a{
     position: relative;
     color: #fff;
@@ -153,12 +155,12 @@ header .navigation .navigation-items a:before {
 header .navigation .navigation-items a:hover:before {
     width: 100%;
 }
-header.fixed-nav .navigation-items {
-    display: none;
+header #navbar.active .navigation-items a{
+    color: white;
 }
+/*  FIM ITENS DO MENU */
 
-
-
+/*  BTN MENU */
 header.fixed-nav .menu-btn {
     background: rgb(50, 205, 71);            
     background-size: 30px;
@@ -167,15 +169,16 @@ header.fixed-nav .menu-btn {
     height: 30px;
     cursor: pointer;
     transition: 0.4s ease;
+    z-index: 999;
 }
 header.fixed-nav .menu-btn.active {
     background: rgb(255, 0, 221);            
     transition: 0.4s ease;
-    z-index: 999;
+    z-index: 3;
 }
+/*  FIM BTN MENU */
 
-
-
+/*
 @media (max-width: 1040px){
     header {
         padding: 12px 20px;
